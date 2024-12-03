@@ -8,6 +8,9 @@ import plotly.express as px
 from dotenv import load_dotenv
 import os
 
+# Define CSS animations at the beginning of your script
+
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -42,6 +45,7 @@ section = st.sidebar.radio("Go to", [
     "💡 Insights & Recommendations"
     # "🏠🚿 Combined Insights"
 ])
+
 
 # Overview Section with icons and emojis
 if section == "🏠 Overview":
@@ -136,9 +140,11 @@ if section == "📈 Visualizations" and pmay_data is not None and sanitation_dat
 if section == "🔮 Predictive Analysis" and pmay_data is not None:
     st.header("🔮 Predictive Analysis: Future Completion Rates")
 
+    # Filter by District for Prediction
     district_selected = st.selectbox("Select a District for Prediction:", pmay_data['District'].unique())
     district_data = pmay_data[pmay_data['District'] == district_selected]
 
+    
     if not district_data.empty:
         current_year = datetime.datetime.now().year
         years = np.array([current_year, current_year + 1, current_year + 2, current_year + 3, current_year + 4]).reshape(-1, 1)
@@ -343,3 +349,5 @@ if section == "🏠🚿 Combined Insights":
             labels={'Infrastructure Completion Index (%)': 'Completion Index (%)'}
         )
         st.plotly_chart(fig_category)
+        
+        

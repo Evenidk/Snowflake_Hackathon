@@ -1,0 +1,64 @@
+# Housing Data Schema
+Sl.No:
+  type: integer
+  range: [1, 10000]  # Assuming a reasonable range for serial numbers
+  allow_null: false
+
+District:
+  type: string
+  allow_null: false
+
+Beneficiary_Selection:
+  type: numeric
+  range: [0, 1000000]  # Adjust as needed based on expected values
+  allow_null: false
+
+Completed:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: false
+
+Foundation:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: true
+
+Lintel:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: true
+
+Roof:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: true
+
+Progress_Total:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: true
+
+Unstarted:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: true
+
+# Sanitation Data Schema
+State:
+  type: string
+  allow_null: false
+
+Sanctioned:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: false
+
+Completed:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: false
+
+In_Progress:
+  type: numeric
+  range: [0, 1000000]
+  allow_null: true
